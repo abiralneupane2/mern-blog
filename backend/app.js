@@ -31,8 +31,11 @@ app.use(infoLogger);
 app.use(rateLimiter);
 
 const users_route = require("./routes/user");
+const articles_route = require("./routes/article");
+
 
 app.use("/user", users_route);
+app.use("/article", articles_route);
 
 // default case for unmatched routes
 app.use(function (req, res) {
