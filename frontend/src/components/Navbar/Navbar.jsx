@@ -6,6 +6,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 
 import Home from "../../containers/Home/Home";
 import About from "../../containers/About/About";
+import AddBlog from "../../containers/AddBlog/AddBlog";
 import Login from "../../containers/Login/Login";
 import Register from "../../containers/Register/Register";
 import Profile from "../../containers/Profile/Profile";
@@ -34,12 +35,12 @@ const NavBar = () => {
                 Home
               </NavLink>
 
-              <NavLink
+              {/* <NavLink
                 className={({ isActive }) => (isActive ? "active" : "")}
                 to="/about"
               >
                 About
-              </NavLink>
+              </NavLink> */}
               {isLoggedIn && (
                 <NavLink
                   className={({ isActive }) => (isActive ? "active" : "")}
@@ -83,6 +84,8 @@ const NavBar = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="add" element={<AddBlog />} />
+        
         {isLoggedIn && <Route path="profile" element={<Profile />} />}
         {!isLoggedIn && <Route path="login" element={<Login />} />}
         {!isLoggedIn && <Route path="register" element={<Register />} />}
