@@ -1,18 +1,14 @@
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 
 
 const Article = require("../models/article");
 
-router.get(
-    '',
-    (req, res)=>{
-        query_fields = req.query.fields
-        console.log(query_fields)
-        Article.find({}).then(function (articles) {
-                res.send(articles);
-            });
-    }
+router.route("/").get(
+    function (req, res) {
+        res.status(404).json({
+            'success': "FUCK YOU"
+    })}
 )
-
 module.exports = router;

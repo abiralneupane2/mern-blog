@@ -9,8 +9,8 @@ services:
     networks:
       - default
     volumes:
-      - ./backend/docker-setup/mongo/db-init.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-      - ./backend/docker-setup/mongo/mongo-volume:/data/db
+      - ./mongo/db-init.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongo/mongo-volume:/data/db
     environment:
       - MONGO_INITDB_DATABASE=mern_docker_starter
       - MONGO_INITDB_USER=local_user
@@ -35,7 +35,7 @@ services:
     depends_on:
       - mongo
     ports:
-      - "5000:4000"
+      - "4000:4000"
 
   frontend:
     container_name: react-mern-docker-boilerplate

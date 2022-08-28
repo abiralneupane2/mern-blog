@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+var Schema = mongoose.Schema;
 
 const articleSchema = mongoose.Schema({
     title: {
@@ -7,7 +7,7 @@ const articleSchema = mongoose.Schema({
         required: true,
     },
     body: {
-      type: Text,
+      type: String,
       required: false,
     },
     author:[

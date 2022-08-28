@@ -24,7 +24,7 @@ const NavBar = () => {
         <Navbar bg="dark" variant="dark">
           <Container>
             <Navbar.Brand className="nav-heading">
-              <NavLink to="/">AppName</NavLink>
+              <NavLink to="/">Blog</NavLink>
             </Navbar.Brand>
             <Nav className="nav-links">
               <NavLink

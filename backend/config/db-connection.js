@@ -9,12 +9,7 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_URL = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 console.log(DB_URL);
 
-const mongoOpts = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-
-mongoose.connect(DB_URL, mongoOpts, (err, res) => {
+mongoose.connect(DB_URL, (err, res) => {
   if (err) {
     console.error(err);
   } else {

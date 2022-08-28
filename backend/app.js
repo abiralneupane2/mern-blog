@@ -34,8 +34,11 @@ const users_route = require("./routes/user");
 const articles_route = require("./routes/article");
 
 
-app.use("/user", users_route);
-app.use("/article", articles_route);
+// app.use("/user", users_route);
+// app.use("/article", articles_route);
+app.get("/", function(req, res, next){
+  res.send({"success": "Hello"})
+})
 
 // default case for unmatched routes
 app.use(function (req, res) {
